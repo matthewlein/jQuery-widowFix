@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery Widow Fix Sample</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.widowFix-1.0.min.js"></script>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: ../css/experiments.css" type="text/css">
+<style type="text/css">
+
+
+
+</style>
+<style type="text/css">
+
+#wfDemo {
+	width: 400px;
+	margin-top: 10px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	padding: 10px;
+	border: 1px solid #666;
+}
+#wfDemo h1 {
+	font-size: 30px;
+	margin-top: 0px;
+	margin-bottom: 4px;
+}
+#wfDemo p {
+	font-size: 12px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#wfDemo h1').widowFix();
+});
+</script>
+</head>
+<body>
+<div id="wfDemo">
+  <h1>What a terrible place to break</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend diam non orci pellentesque sit amet scelerisque eros interdum. Integer at sodales leo. Maecenas non felis nibh urna augue. Integer in urna ut erat ultricies rutrum. Cras eleifend metus laoreet lacus accumsan  elementum augue aliquet. </p>
+</div>
+</body>
+</html>
