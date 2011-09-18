@@ -1,0 +1,41 @@
+
+
+.gradient-vert(@start: #000, @stop: #fff, @fallback: #fff ) {    
+    background: @fallback; /* Old browsers */
+    background:    -moz-linear-gradient(top, @start 0%,@stop 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @start 0%,@stop 100%); /* Chrome10+,Safari5.1+ */
+    background:     -ms-linear-gradient(top, @start 0%,@stop 100%); /* IE10+ */
+    background:      -o-linear-gradient(top, @start 0%,@stop 100%); /* Opera11.10+ */
+    background:         linear-gradient(top, @start 0%,@stop 100%); /* W3C */
+}
+
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.5) {
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	   -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	        box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+
+
+.border-radius(@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0, ) {
+	-webkit-border-top-right-radius:    @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius:  @bottomleft;
+	-webkit-border-top-left-radius:     @topleft;
+	-moz-border-radius-topright:        @topright;
+	-moz-border-radius-bottomright:     @bottomright;
+	-moz-border-radius-bottomleft:      @bottomleft;
+	-moz-border-radius-topleft:         @topleft;
+	border-top-right-radius:            @topright;
+	border-bottom-right-radius:         @bottomright;
+	border-bottom-left-radius:          @bottomleft;
+	border-top-left-radius:             @topleft;
+}
+
+.boxModel() {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+       -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+}
