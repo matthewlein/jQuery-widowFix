@@ -12,30 +12,70 @@
 
 
 .drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.5) {
-	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
-	   -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
-	        box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+    -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+       -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+            box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
 
 
-.border-radius(@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0, ) {
-	-webkit-border-top-right-radius:    @topright;
+.border-radius-individual(@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0) {
+	-webkit-border-top-right-radius: @topright;
 	-webkit-border-bottom-right-radius: @bottomright;
-	-webkit-border-bottom-left-radius:  @bottomleft;
-	-webkit-border-top-left-radius:     @topleft;
-	-moz-border-radius-topright:        @topright;
-	-moz-border-radius-bottomright:     @bottomright;
-	-moz-border-radius-bottomleft:      @bottomleft;
-	-moz-border-radius-topleft:         @topleft;
-	border-top-right-radius:            @topright;
-	border-bottom-right-radius:         @bottomright;
-	border-bottom-left-radius:          @bottomleft;
-	border-top-left-radius:             @topleft;
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-webkit-border-top-left-radius: @topleft;
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-moz-border-radius-topleft: @topleft;
+	border-top-right-radius: @topright;
+	border-bottom-right-radius: @bottomright;
+	border-bottom-left-radius: @bottomleft;
+	border-top-left-radius: @topleft;
 }
 
-.boxModel() {
+.border-radius(@radius) {
+	.border-radius-individual(@radius, @radius, @radius, @radius);
+}
+
+.box-model() {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
        -moz-box-sizing: border-box; /* Firefox, other Gecko */
             box-sizing: border-box; /* Opera/IE 8+ */
 }
+
+.cf() {
+    :before,
+    :after {
+        content: "";
+        display: table;
+    }
+    :after {
+        clear: both;
+    }
+    *zoom: 1;
+}
+
+
+@bgColor: #FFC00E; // orange
+
+@bgGrey: #C4C6C8; // sidebar and nav
+@grey: #82939A; // for headlines and nav
+@orange: #F16F21; // class headlines and highlights
+@white: #fff;
+
+@baseFontSize: 14px;
+@baseLineHeight: 17px;
+@baseFontFamily: "Times New Roman", serif;
+@altFontFamily: 'Istok Web', sans-serif;
+
+@page-width : 840px;
+
+@sectionBackground: #DEE8EC;
+
+@sectionPadding: 0px;
+@sectionGap: 0px;
+@sectionBorder: solid 1px #e1e0df;
+@colorBorder: solid 1px #a697b8;
+
+@transitionSpeed: 200ms;
