@@ -2,12 +2,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>jQuery Widow Fix - Matthew Lein</title>
+
 <meta name="description" content="Widow Fix is a jQuery plugin to fix widows, or orphans, or whatever you call them—those single words on their own line. It's super lite easy to use!">
-<script type="text/javascript" src="../js/jquery-1.4.3.min.js"></script>
-<script type="text/javascript" src="../js/addEmail.js"></script>
-<script type="text/javascript" src="js/jquery.widowFix-1.3.1.min.js"></script>
+
+<script src="js/jquery-1.4.3.min.js"></script>
+<script src="../js/addEmail.js"></script>
+
+<script src="js/jquery.widowFix-1.3.2.min.js" charset="utf-8"></script>
+
 <link href="../css/experiments.css" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 blockquote {
 	width: 650px;
@@ -55,15 +61,23 @@ blockquote {
 #downloadWF:active {
 	margin-top: 1px;
 }
+
 </style>
+
 <script type="text/javascript">
+
 $(document).ready(function() {
-	$('#demoFix').attr('disabled',false);
-	$('#demoFix').click(function(){
-		$('#wfDemo h4').widowFix();
-		$(this).attr('disabled',true);
-	});
+    
+	$('#demoFix').attr('disabled',false)
+        .click(function(){
+	    
+    		$('#wfDemo h4').widowFix();
+    		$(this).attr('disabled',true);
+		
+    	});
+	
 });
+
 </script>
 </head>
 <body>
@@ -71,24 +85,37 @@ $(document).ready(function() {
   <div id="content"> 
     <!--#include virtual="/inc/experiment-header.html" -->
     <h2>jQuery Widow Fix</h2>
+    
     <p>Widow Fix is a jQuery plugin to fix widows, or orphans, or whatever you call them—those single words on their own line. It does this by adding a &amp;nbsp; (non-breaking space) in between the last 2 words.  It's super lite  and easy to use!</p>
-    <a href="jquery-widowFix-1.3.1-MatthewLein.zip" id="downloadWF">Download Widow Fix v1.3.1</a>
+    <a href="https://github.com/matthewlein/jQuery-widowFix" id="downloadWF" target="_blank">Download WidowFix on Github</a>
+    
     <h3>Demo</h3>
+    
     <input type="button" name="demoFix" id="demoFix" value="Apply WidowFix">
+    
     <div id="wfDemo">
       <h4>What a terrible place to break</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend diam non orci pellentesque sit amet scelerisque eros interdum. sInteger at sodales leo. Maecenas non felis nibh urna augue. Integer in urna ut erat ultricies rutrum. Cras eleifend metus laoreet lacus accumsan  elementum augue aliquet orci diam. </p>
     </div>
+    
+    
+    
     <h3>How to Use</h3>
+    
     <p>Attach jQuery:</p>
+    
     <blockquote>
       <p>&lt;script type=&quot;text/javascript&quot; src=&quot;path/to/jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;</p>
     </blockquote>
+    
     <p>Attach Widow Fix plugin:</p>
+    
     <blockquote>
       <p>&lt;script type=&quot;text/javascript&quot; src=&quot;path/to/jquery.widowFix-1.3.min.js&quot;&gt;&lt;/script&gt;</p>
     </blockquote>
+    
     <p>Call the widowFix method with your selector:</p>
+    
     <blockquote>
       <p>$(document).ready(function() {<br>
         //all heading 1s<br>
@@ -97,10 +124,15 @@ $(document).ready(function() {
         &nbsp;&nbsp;&nbsp;&nbsp;<strong>$('#mainColumn h1').widowFix();</strong></p>
       <p>});</p>
     </blockquote>
+    
     <p>That's it! That will fix the widows.</p>
     <p>Considering  this is a client-side solution, I don't recommend using the fix on  every element, like <code>$('p,h1,h2,h3,h4,h5,h6').widowFix();</code> because that will  slow down the page (every ms counts). It will work, but I don't recommend it. Also, since it's a very small script, it would probably be best added into your main javascript file to reduce the number of http requests.</p>
-    <h3>Options    </h3>
+    
+    
+    <h3>Options</h3>
+    
     <p>There are just 3 options, and you use them in this format:</p>
+    
     <blockquote>
       <p>$('h1').widowFix(<strong>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;letterLimit: 10,<br>
@@ -108,10 +140,16 @@ $(document).ready(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;linkFix: true <br>
 }</strong>)</p>
     </blockquote>
+    
     <p><code>letterLimit</code> will set the number of letters that you think still counts as a widow/orphan. Some people think that long words look fine by themselves and shouldn't be Widow Fixed. So if you think words of 10+ letters look fine, set the limit to 10 and it will ignore those words. Any words shorter than 10 characters will still be fixed. The default is to fix all words regardless of characters.</p>
+    
     <p><code>prevLimit</code> will set the ignore amount for the previous (second to last) word. If you don't want to fix widows/orphans when the second to last word is shorter than 5 letters, set <code>prevLimit: 5</code> and it will skip those widows. The default is to fix all words regardless of the previous word length.</p>
+    
     <p>If  the last word in your element is a link, then it will replace the space between <code>&lt;a href&gt;</code>, giving you <code>&lt;a&amp;nbsp;href&gt;.</code>The option <code>linkFix:true</code> will maintain your link and replace the proper space. Only add this option if this is a contant problem, as it will slightly slow down the script.</p>
-<h3>About the Plugin</h3>
+    
+    
+    <h3>About the Plugin</h3>
+    
     <p>This plugin is dual licensed under the MIT and GPL licenses. It is partly based on <a href="http://www.learningjquery.com/2008/07/three-quick-ways-to-avoid-widows" target="_blank">Karl Swedberg's post</a> on widows. I reworked it a bit, added trailing space removal, letter counting, and the link fix. Feel free to use it in any projects, but please email me if you're using it. I love to know where my projects are living.    </p>
     <!--#include virtual="/inc/experiment-comments.html" --> 
     <!--#include virtual="/inc/footer.html" --> 
