@@ -1,0 +1,34 @@
+{
+    "name": "widowfix",
+    "title": "jQuery Widow Fix",
+    "description": "Widow Fix is a jQuery plugin to fix widows, or orphans, or whatever you call them—those single words on their own line. It does this by adding a &nbsp; (non-breaking space) in between the last 2 words.",
+    "keywords": [
+        "typography",
+        "orphans",
+        "widows",
+        "design"
+    ],
+    "version": "1.3.2",
+    "dependencies": {
+        "jquery": ">=1.4.3"
+    },
+    "author": {
+        "name": "Matthew Lein",
+        "url": "http://matthewlein.com/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        },
+        {
+            "type": "GPL",
+            "url": "http://www.gnu.org/licenses/gpl.html"
+        }
+    ],
+
+    "bugs": "https://github.com/matthewlein/jQuery-widowFix/issues",
+    "homepage": "http://matthewlein.com/widowfix/",
+    "docs": "http://matthewlein.com/widowfix/",
+    "download": "https://github.com/matthewlein/jQuery-widowFix"
+}
