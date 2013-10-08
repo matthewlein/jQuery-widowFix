@@ -114,7 +114,7 @@
 					}
 				}
 
-				var content = contentArray.join(' ') + '&nbsp;' + lastWord;
+				var content = contentArray.join(' ') + '\u0020' + lastWord;
 				$this.html(content);
 
 				if (wfOptions.linkFix) {
