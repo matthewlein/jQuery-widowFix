@@ -1,0 +1,33 @@
+{
+  "name": "jquery-windowFix",
+  "version": "1.3.2",
+  "homepage": "https://github.com/matthewlein/jQuery-widowFix",
+  "authors": [
+    "Matthew Lein <matt@matthewlein.com>"
+  ],
+  "description": "Widow Fix is a jQuery plugin to fix widows or orphans and prevent words being in a single words on their own line.",
+  "main": "js/jquery.widowFix.min.js",
+  "dependencies": {
+  "jquery": "1.4.3",
+  },
+  "keywords": [
+    "typography",
+    "orphans",
+    "widows",
+    "design",
+    "widowfix"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.3.2",
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:matthewlein/jQuery-widowFix.git"
+  }
+}
